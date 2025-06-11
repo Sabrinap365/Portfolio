@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alice In Chains</title>
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --light-bg: #F5F5F5;
+            --gold: #D4AF37;
+            --dark-text: #E8E8E8;
+            --light-text: #2C2C2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        body.light {
+            background: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .light header {
+            background: rgba(245, 245, 245, 0.95);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .hero {
+            padding: 120px 0 60px;
+        }
+
+        .featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .featured-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .featured-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .timeline {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--gold);
+            opacity: 0.3;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.5s forwards;
+            animation-delay: calc(var(--i) * 0.2s);
+        }
+
+        .timeline-content {
+            width: 80%;
+            margin: 0 auto;
+            background: rgba(74, 74, 74, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .light .timeline-content {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .timeline-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .timeline-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery {
+            padding: 60px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.5s forwards;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: var(--gold);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) 
+            .featured {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-content {
+                width: 90%;
+            }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="logo">Alice In Chains</div>
+                <ul>
+                    <li><a href="index.html">Timeline</a></li>
+                    <li><a href="html/information.html">Information</a></li>
+                    <li><a href="html/members.html">Members</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="timeline" id="timeline">
+        <div class="container">
+            <h2>Album Timeline</h2>
+            <div class="timeline-item" style="--i:1">
+                <div class="timeline-content">
+                    <div class="timeline-img">
+                        <img src="image/facelift.jpg" alt="Facelift">
+                    </div>
+                    <h3>Facelift (1990)</h3>
+                    <p>Facelift is the debut studio album by the American rock band Alice in Chains, released by Columbia Records on August 28, 1990. The tracks "We Die Young", and "Man in the Box" were released as singles. "Man in the Box" was nominated for a Grammy Award for Best Hard Rock Performance with Vocal in 1992.[5] Facelift became the first grunge album to be certified gold by the Recording Industry Association of America (RIAA), achieving this feat on September 11, 1991. The album peaked at No. 42 on the Billboard 200 chart,[8] and has been certified triple-platinum by the RIAA for shipments of three million copies in the United States.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="--i:2">
+                <div class="timeline-content">
+                    <div class="timeline-img">
+                        <img src="image/dirt.jpg" alt="Dirt">
+                    </div>
+                    <h3>Dirt (1992)</h3>
+                    <p>Dirt is the second studio album by American rock band Alice in Chains, released on September 29, 1992 by Columbia Records. It was the band's last album recorded with all four original members, as bassist Mike Starr was fired in January 1993 during the tour to support the album.[11] The majority of the songs were written by guitarist Jerry Cantrell, but for the first time, vocalist Layne Staley wrote two songs by himself ("Hate to Feel" and "Angry Chair"), both also featuring Staley on guitar. The track "Iron Gland" features Tom Araya from Slayer on vocals. The album's lyrics explore depression, pain, anger, anti-social behavior, relationships, drug (primarily heroin) addiction, war, death, and other emotionally charged topics.<p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="--i:3">
+                <div class="timeline-content">
+                    <div class="timeline-img">
+                        <img src="image/flies.jpg" alt="Jar of Flies">
+                    </div>
+                    <h3>Jar of Flies (1994)</h3>
+                    <p>Jar of Flies is the third studio EP by American rock band Alice in Chains. It was released on January 25, 1994, by Columbia Records. The band's second acoustic EP, after 1992's Sap, it was the first acoustic EP in music history to debut at No. 1 on the Billboard 200 chart, with the first week sales exceeding 141,000 copies in the United States. The self-produced record was written and recorded over the course of just one week at the London Bridge Studio in Seattle. The tracks "No Excuses", "I Stay Away" and "Don't Follow" were released as singles to promote the EP. Jar of Flies was nominated for two Grammy Awards in 1995: Best Recording Package and Best Hard Rock Performance for "I Stay Away".</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="--i:4">
+                <div class="timeline-content">
+                    <div class="timeline-img">
+                        <img src="image/alice.jpg" alt="Alice in Chains">
+                    </div>
+                    <h3>Alice in Chains (1995)</h3>
+                    <p>Alice in Chains (sometimes informally referred to as the Dog Album or Tripod) is the third studio album by American rock band Alice in Chains. It was released on October 31, 1995, by Columbia Records, and was the follow-up to the highly successful Dirt (1992). This is the band's first full-length studio album to feature bassist Mike Inez, their last studio album to feature original lead vocalist Layne Staley, and their final studio album to be released through Columbia.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="--i:5">
+                <div class="timeline-content">
+                    <div class="timeline-img">
+                        <img src="image/blue.jpg">
+                    </div>
+                    <h3>Black Gives Way to Blue (2009)</h3>
+                    <p>Black Gives Way to Blue is the fourth studio album by the American rock band Alice in Chains, released on September 29, 2009, on the 17th anniversary of the release of their second album, Dirt. It is their first record without original lead singer Layne Staley, who died in 2002, and their first album with new vocalist and rhythm guitarist William DuVall sharing vocal duties with lead guitarist/vocalist Jerry Cantrell, who sings lead vocals on most of the songs. The title track is a tribute to Staley featuring Elton John on piano.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="--i:6">
+                <div class="timeline-content">
+                    <div class="timeline-img">
+                        <img src="image/fog.jpg">
+                    </div>
+                    <h3>Rainier Fog (2018)</h3>
+                    <p>Rainier Fog (pronounced: /reɪˈnɪər/) is the sixth studio album by American rock band Alice in Chains, released on August 24, 2018, through BMG, the band's first release on the label. The title was inspired by Mount Rainier, a volcano that overlooks the Seattle-Tacoma metropolitan area, and the title track is a tribute to the Seattle music scene.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <button class="theme-toggle" id="theme-toggle">🌓</button>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light');
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

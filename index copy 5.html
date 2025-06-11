@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+	<title>IMDb</title>
+	<style>
+		body{
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding:0;
+			background-color:grey;
+		}
+		#wrapper{
+			width:1000px;
+			margin:0 auto;
+			background-color: white;
+		}
+		#header{
+			background-color:black;
+			overflow:hidden;
+		}
+		#logo{
+			float:left;
+			background-color:yellow;
+			padding:10px;
+			width:90px;
+			text-align: center;
+			font-weight:bold;
+			font-size:24px;
+		}
+		#nav{
+			float:left;
+		}
+		#nav ul{
+			list-style-type:none;
+			margin:0;
+			padding:0;
+		}
+		#nav li{
+			float:left;
+			margin: 0;
+		}
+		#nav a{
+			display: block;
+			color:white;
+			text-align: center;
+			padding:14px 16px;
+			text-decoration: none;
+		}
+		#main-content{
+			float:left;
+			width:650px;
+			padding:10px;
+		}
+		#trailers{
+			background-color: #333;
+			color:white;
+			padding:10px;
+			margin-bottom:20px;
+		}
+		#trailer-images{
+			display:flex;
+			justify-content:space-between;
+		}
+		.movie{
+			width:32%;
+		}
+		.movie img{
+			width:100%;
+			height:auto;
+		}
+		#browse-link{
+			color:cyan;
+			padding:10px 0;
+			display:block;
+		}
+		#banner{
+			margin-bottom:20px;
+		}
+		#banner img{
+			width:100%;
+			height:auto;
+		}
+		#lauren-cohan{
+			margin-bottom:20px;
+		}
+		#lauren-cohan h2{
+			font-size:20px;
+			margin-bottom:10px;
+		}
+		#lauren-cohan img{
+			width:100%;
+			height:auto;
+		}
+		#sidebar{ 
+			float:right;
+			width:300px;
+			padding:10px;
+		}
+		#opening-this-week{
+			margin-bottom:20px;
+		}
+		#opening-this-week h3{
+			font-size: 18px;
+			margin-bottom:10px;
+		}
+		#tickets{
+			display:block;
+			background-color: #00f2f2;
+			color:black;
+			text-align: center;
+			padding:15 px;
+			margin:15px 0;
+			font-weight:bold;
+			text-decoration:none;
+		}
+		#box-office{
+			margin-bottom:20px;
+		}
+		#box-office h3{
+			font-size:18px;
+			margin-bottom: 10px;
+		}
+		.earnings{
+			font-size: 14px;
+			color:#666;
+		}
+		.see-more{
+			display:block;
+			text-align:right;
+			margin-top:10px;
+		}
+		#footer{
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+        <div id="header">
+            <div id="logo">IMDb</div>
+            <div id="nav">
+                <ul>
+                    <li><a href="#">Watch Now For Free</a></li>
+                    <li><a href="#">Movies, TV & Showtimes</a></li>
+                    <li><a href="#">Celebs, Events & Photos</a></li>
+                    <li><a href="#">News & Community</a></li>
+                    <li><a href="#">Watchlist</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-content">
+            <div id="trailers">
+                <div id="trailer-images">
+                    <div class="movie">
+                        <img src="image/toy4.jpg">
+                    </div>
+                    
+                    <div class="movie">
+                    	<img src="image/avengers.jpg">
+                    </div>
+                    
+                    <div class="movie">
+                        <img src="image/sabrina.jpg">
+                    </div>
+                </div>
+                
+                <a href="#" id="browse-link">Browse trailers</a>
+            </div>
+            
+            <div id="banner">
+                <img src="image/warehouse13.jpg">
+            </div>
+            
+            <div id="lauren-cohan">
+                <h2>"Whiskey Cavalier" Star Lauren Cohan's 007 Pick</h2>
+                <img src="image/laurencohan.jpg">
+                <p>Lauren Cohan, star of the new spy show "Whiskey Cavalier," divulges top-secret information about her favorite TV couple, which actress should play James Bond...</p>
+            </div>
+        </div>
+        
+        <div id="sidebar">
+            <div id="opening-this-week">
+                <h3>Opening this week</h3>
+                <ul>
+                    <li><a href="#">Us</a></li>
+                    <li><a href="#">Triple Threat</a></li>
+                    <li><a href="#">Hotel Mumbai</a></li>
+                    <li><a href="#">Mard Ko Dard Nahin Hota</a></li>
+                    <li><a href="#">Dragged Across Concrete</a></li>
+                    <li><a href="#">Ramed Shop</a></li>
+                    <li><a href="#">Sunset</a></li>
+                </ul>
+                <a href="#" class="see-more">Show more opening this week &gt;&gt;</a>
+            </div>
+            
+            <a href="#" id="tickets">Get Tickets & Showtimes</a>
+            
+            <div id="box-office">
+                <h3>Now Playing (Box Office)</h3>
+                <ul>
+                    <li>
+                        <a href="#">Captain Marvel</a>
+                        <div class="earnings">$68.0M</div>
+                    </li>
+                    <li>
+                        <a href="#">Wonder Park</a>
+                        <div class="earnings">$15.9M</div>
+                    </li>
+                    <li>
+                        <a href="#">Five Feet Apart</a>
+                        <div class="earnings">$13.2M</div>
+                    </li>
+                    <li>
+                        <a href="#">How To Train Your Dragon: The Hidden World</a>
+                        <div class="earnings">$9.3M</div>
+                    </li>
+                    <li>
+                        <a href="#">A Madea Family Funeral</a>
+                        <div class="earnings">$7.8M</div>
+                    </li>
+                </ul>
+                <a href="#" class="see-more">See more box office results &gt;&gt;</a>
+            </div>
+        </div>
+        
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
+
+
+
+
